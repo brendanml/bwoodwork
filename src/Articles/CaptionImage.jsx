@@ -8,7 +8,7 @@ export default function CaptionImage({
             <img
                 src={src}
                 alt={caption || "No alt provided."}
-                className={`w-full shadow-sm ${className}`}
+                className={`w-full shadow-sm object-cover h-full ${className}`}
             />
             {caption && (
                 <figcaption className="text-xs text-center text-muted-foreground italic">

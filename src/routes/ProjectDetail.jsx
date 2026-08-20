@@ -54,7 +54,7 @@ export default function ProjectDetail() {
     const physicalProduct = products.find((p) => p.type === "physical")
 
     return (
-        <article className="w-full leading-relaxed">
+        <article className="w-full leading-loose">
             <header className="">
                 <Link
                     to="/"
@@ -67,16 +67,16 @@ export default function ProjectDetail() {
                 <div className="col-span-12 sm:col-span-5">
                     <ImageCarousel imageUrls={project.image_urls} />
                 </div>
-                <div className="col-span-12 sm:col-span-7 ml-6">
+                <div className="col-span-12 sm:col-span-7 sm:ml-6 mt-4 sm:mt-0">
                     <h1 className="text-xl underline mb-4">{project.name}</h1>
-                    <p className="text text-secondary whitespace-pre-wrap">
+                    <p className="text text-primary/70 whitespace-pre-wrap">
                         {project.description}
                     </p>
                 </div>
             </div>
 
             {project.writeup && project.writeup.length > 0 && (
-                <section className="space-y-10 pt-8 w-10/12 pb-10">
+                <section className="space-y-10 pt-8 sm:w-10/12 pb-10">
                     {project.writeup.map((sec, idx) => (
                         <div key={idx} className="space-y-4">
                             {sec.header && <Header>{sec.header}</Header>}
@@ -93,7 +93,59 @@ export default function ProjectDetail() {
                     ))}
                 </section>
             )}
-            <div className="fixed bottom-5 right-10 w-22 h-40 flex flex-col justify-center gap-2">
+
+            <div className="w-full bg-black/90 backdrop-blur-lg border-t border-neutral-800 fixed bottom-0 left-0 z-50 px-4 py-3 pb-safe sm:hidden">
+                <div className="w-full flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
+                    <div className="flex items-center gap-2 w-full">
+                        {project.youtube_url && (
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                asChild
+                                className="flex-1 h-11 bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 hover:text-white text-xs font-medium"
+                            >
+                                <a
+                                    href={project.youtube_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Video
+                                    <ExternalLink className="ml-1 h-3.5 w-3.5 text-neutral-400" />
+                                </a>
+                            </Button>
+                        )}
+
+                        {digitalProduct && (
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className="flex-1 h-11 bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 hover:text-white text-xs font-medium"
+                                asChild
+                            >
+                                <Link to={`/products/${digitalProduct._id}`}>
+                                    <NotepadText className="mr-1 h-3.5 w-3.5 text-neutral-400" />
+                                    Plans
+                                </Link>
+                            </Button>
+                        )}
+
+                        {physicalProduct && (
+                            <Button
+                                size="sm"
+                                className="flex-1 h-11 bg-white text-black hover:bg-neutral-200 text-xs font-semibold shadow-sm"
+                                asChild
+                            >
+                                <Link to={`/products/${physicalProduct?._id}`}>
+                                    <ShoppingCart className="mr-1 h-3.5 w-3.5" />
+                                    Buy
+                                </Link>
+                            </Button>
+                        )}
+                    </div>
+                </div>
+            </div>
+
+            <div className="fixed bottom-5 right-10 w-22 h-40 sm:flex flex-col justify-center gap-2 hidden">
                 {project.youtube_url && (
                     <Button
                         size="lg"

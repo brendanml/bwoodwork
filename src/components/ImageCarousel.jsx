@@ -21,8 +21,8 @@ export default function ImageCarousel({ imageUrls = [] }) {
     if (!imageUrls.length) return null
 
     return (
-        <div className="w-full max-w-12rem space-y-2">
-            <Carousel setApi={setApi} className="w-full relative group">
+        <div className="w-full min-w-0 space-y-2">
+            <Carousel setApi={setApi} className="w-full min-w-0 relative group">
                 <CarouselContent>
                     {imageUrls.map((url) => (
                         <CarouselItem key={url}>

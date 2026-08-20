@@ -98,7 +98,6 @@ export default function ProductDetail() {
 
     return (
         <div className="grid grid-cols-12 w-full gap-8 mx-auto">
-            {/* Back link */}
             <div className="col-span-12">
                 <Link
                     to="/"
@@ -109,11 +108,10 @@ export default function ProductDetail() {
             </div>
 
             {/* Left: Image Carousel */}
-            <div className="col-span-12 md:col-span-6">
+            <div className="col-span-12 md:col-span-6 min-w-0">
                 <ImageCarousel imageUrls={carouselImages} />
             </div>
 
-            {/* Right: Product Details & Purchase Controls */}
             <div className="col-span-12 md:col-span-6 flex flex-col gap-y-6 text-left">
                 <div className="space-y-2">
                     <h1 className="text-3xl font-heading capitalize font-bold">
@@ -156,7 +154,7 @@ export default function ProductDetail() {
                         </div>
                     )}
 
-                    <div className="flex items-center gap-3 pt-2">
+                    <div className="flex items-center gap-3 pt-2 sm:mb-0 mb-4">
                         <div className="w-24">
                             <label className="text-xs font-medium text-muted-foreground block mb-1">
                                 Quantity
