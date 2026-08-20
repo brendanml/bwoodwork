@@ -1,4 +1,4 @@
-import { ShoppingCart, Plus, Minus, Trash2, Package } from "lucide-react"
+import { Plus, Minus, Trash2, Package } from "lucide-react"
 import { useCart } from "../state/cart/useCart"
 import { handleCheckout } from "@/services/paymentService"
 import {
@@ -68,7 +68,7 @@ export function CartSheet() {
                                     className="flex justify-between items-start gap-3 pb-4 border-b border-border/50 last:border-0 last:pb-0"
                                 >
                                     {/* Thumbnail */}
-                                    <div className="h-14 w-14 rounded-md bg-muted flex-shrink-0 overflow-hidden border flex items-center justify-center">
+                                    <div className="h-14 w-14 rounded-md bg-muted shrink-0 overflow-hidden border flex items-center justify-center">
                                         {item.image_url ? (
                                             <img
                                                 src={item.image_url}

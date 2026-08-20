@@ -132,15 +132,17 @@ export default function ProjectDetail() {
                         </Link>
                     </Button>
                 )}
-                <Button
-                    size="lg"
-                    className="px-0 ml-4 p-2 border-black/5 shadow-xs w-full"
-                    asChild
-                >
-                    <Link to={`/projects/edit/${id}`}>
-                        Edit <Pencil className="mr-1.5 h-3.5 w-3.5" />
-                    </Link>
-                </Button>
+                {import.meta.env.VITE_ENVIRONMENT == "dev" && (
+                    <Button
+                        size="lg"
+                        className="px-0 ml-4 p-2 border-black/5 shadow-xs w-full"
+                        asChild
+                    >
+                        <Link to={`/projects/edit/${id}`}>
+                            Edit <Pencil className="mr-1.5 h-3.5 w-3.5" />
+                        </Link>
+                    </Button>
+                )}
             </div>
         </article>
     )

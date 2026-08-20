@@ -35,7 +35,7 @@ export default function ProjectPage() {
                     </Card>
                 ))}
             </CardGrid>
-            {import.meta.env.DEV && (
+            {import.meta.env.VITE_ENVIRONMENT == "dev" && (
                 <Link
                     to="/projects/create"
                     className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-all hover:scale-105 active:scale-95"

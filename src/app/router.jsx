@@ -8,7 +8,6 @@ import ContentLayout from "../layouts/ContentLayout"
 import ProjectDetail from "../routes/ProjectDetail"
 import ProductDetail from "../routes/ProductDetail"
 import Products from "../routes/Products"
-import AdminDashboard from "../routes/AdminDashboard"
 import ProjectForm from "@/components/ProjectsDashboard/ProjectForm"
 import PurchaseCompletion from "@/routes/PurchaseCompletion"
 import About from "@/routes/About"
@@ -60,10 +59,6 @@ export const router = createBrowserRouter([
 
                     ...(import.meta.env.DEV
                         ? [
-                              {
-                                  path: "admin",
-                                  Component: AdminDashboard,
-                              },
                               {
                                   path: "projects/create",
                                   Component: ProjectForm,
