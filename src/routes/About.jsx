@@ -4,102 +4,116 @@ import Paragraph from "@/Articles/Paragraph"
 
 export default function About() {
     return (
-        <div className="grid grid-cols-12 gap-6 gap-y-12">
-            <div className="col-span-4">
+        <div className="grid grid-cols-12 gap-6 gap-y-12 mb-20">
+            <div className="sm:col-span-3">
                 <CaptionImage src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/armscrossed.png" />
             </div>
-            <div className="col-span-8 flex flex-col gap-4">
+            <div className="col-span-9 flex flex-col gap-4">
                 <Header>Hi, my name is Brendan.</Header>
                 <Paragraph>
-                    If every woodworker has an unconventional road to
-                    woodworking, are any of them truly unconventional?
+                    <b>TL;DR</b>: Frequently moving between rentals made me
+                    resent Ikea furniture and build my own desk. An abundance of
+                    time (COVID) and a lack of funds encouraged me build my own
+                    storage solutions for my 90sqft bedroom. A lack of tools
+                    pushed me towards a career that could see me afford them
+                    (BSc Computer Science, Software Engineer). A national
+                    recession caused a layoff that made me ask the question:
+                    "why don't I just do what I love and find a way to make it
+                    work?".
                 </Paragraph>
                 <Paragraph>
-                    <b>TLDR</b>: Frequent moves lead to me resenting Ikea
-                    furniture and building my first desk top (laminated fir,
-                    lol). An abundance of time (COVID) and a lack of funds saw
-                    me build shelves and storage solutions for my 90sqft
-                    bedroom. A lack of tools pushed me towards a career that
-                    could see me afford them (BSc Computer Science, Software
-                    Engineer). A national recession caused a layoff that made me
-                    ask the question: "why don't I just do what I love and find
-                    a way to make it work?".
+                    <b className="text">
+                        If every woodworker has an unconventional road to
+                        woodworking, are any of them truly unconventional?
+                    </b>
                 </Paragraph>
             </div>
-            <div className="sm:col-span-8 flex flex-col gap-4">
+            <div className="sm:col-span-9 flex flex-col gap-4">
                 <Header>2018: A Journey Begins</Header>
                 <Paragraph>
-                    A newly minted University drop out, I landed a gig
-                    manufacturing & delivering matresses for an upscale bedroom
-                    furniture company. My delivery partner was our woodworker.
-                    Our deliveries took us all around the Greater Victoria area,
-                    visiting many of the nicest homes in the region. Without
-                    fail, my partner would name every wood variety in the homes
-                    we visited. To somebody to which wood had always been just
-                    "light" or "dark", this grabbed my interest. As my interest
-                    grew, I began taking a bigger role, ocaisonally finishing
-                    some of the things he made.
+                    The first project I took on was the desk top for a metal
+                    base I had contracted. Not having any tools, I payed
+                    somebody $50 to let me plane down and joint the edges of my
+                    big box lumber. I was convinced my doweling jig would get my
+                    panel dead flat. It did anything but. On the bright side, I
+                    would never have to deal with process of building or moving
+                    Ikea furniture ever again.
                 </Paragraph>
                 <Paragraph>
-                    The first project I took on was the desk top for a metal
-                    base I had contracted. Not having any tools to my name, I
-                    payed somebody $50 to let me plane down and joint the edges
-                    of my bix box lumber. The doweling jig that I was convinced
-                    would have this work surface dead flat did anything but. On
-                    the bright side, never again would I have to deal with
-                    process of moving or building Ikea furniture. Now knowing I
-                    enjoyed making things but with my hands, I knew I would one
-                    day want a shop. But woodworking "does not pay". This lead
-                    to me re-enrolling in University, this time in the highly
-                    lucrative Computer Science, where one day soon, I would
-                    assuredly afford my own shop.
+                    Now knowing I enjoyed making things with my hands, I knew
+                    that one day I would have to have a shop. But... woodworking
+                    "does not pay", which lead to me re-enrolling in University.
+                    I would assuredly be able to afford my own shop by "Learning
+                    to code", right?
                 </Paragraph>
             </div>
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-3">
                 <CaptionImage
-                    src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/about/desk.png"
+                    src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/about/desk.jpeg"
                     caption="My uneven, unstable, rough cut fir desk top."
                 />
             </div>
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-3">
                 <CaptionImage
-                    src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/first_build.png"
-                    caption="My first real build. Made in the backyard of a 8 person rental while in University."
+                    src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/about/shelf.png"
+                    caption="My first real build."
                 />
             </div>
-            <div className="sm:col-span-8 flex flex-col gap-4">
+            <div className="sm:col-span-9 flex flex-col gap-4">
                 <Header>2020: Lockdown Builds</Header>
                 <Paragraph>
-                    With the onset of COVID and school moving online, I knew I
-                    would have more free time to work on projects. I bought a
-                    drill and a circular saw and got to building the things my
-                    room lacked. I didn't have a garage or a drive way, so any
-                    and all builds would be done in the yard of an 8 person
-                    rental.
+                    With the onset of COVID and school moving online, I had more
+                    free time to work on projects. I bought a drill and a
+                    circular saw and got to building the things my room lacked.
+                    I didn't have a garage or a drive way, so all builds would
+                    be done in the yard of an 8 person rental.
                 </Paragraph>
                 <Paragraph>
-                    It wasn't perfect, but I built it. Through and through.
+                    This shelf was far from perfect, but I built it. Through and
+                    through. Fingers were malleted, but the things I learned
+                    lead me to fully furnishing my room with both my own builds
+                    and restored marketplace items.
                 </Paragraph>
             </div>
-            <div className="sm:col-span-8 flex flex-col gap-4">
+            <div className="sm:col-span-9 flex flex-col gap-4">
                 <Header>2025: Graduation and Job Woes</Header>
-                <Paragraph></Paragraph>
+                <Paragraph>
+                    A newly graduated Computer Science student I was welcomed
+                    into a barren job market filled with nothingness. Hundreds
+                    of hand written applications earned me hundreds of automated
+                    rejection letters, until finally, I landed my first job.
+                </Paragraph>
+                <Paragraph>
+                    All money I made beyond "just getting by" went into getting
+                    tools to build. I made a list of everything I needed, and
+                    scoured marketplace every day, getting things at a price I
+                    could "afford".
+                </Paragraph>
             </div>
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-3">
                 <CaptionImage
-                    src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/first_build.png"
-                    caption="My first real build. Made in the backyard of a 8 person rental while in University."
+                    src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/about/shop.png"
+                    caption="My garage and soon-to-be workshop."
                 />
             </div>
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-3">
                 <CaptionImage
-                    src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/first_build.png"
-                    caption="My first real build. Made in the backyard of a 8 person rental while in University."
+                    src="https://khn6vfmiqjxyjkhw.public.blob.vercel-storage.com/about/dresser.jpeg"
+                    caption="A dresser circa the 1940's, restored."
                 />
             </div>
-            <div className="sm:col-span-8 flex flex-col gap-4">
+            <div className="sm:col-span-9 flex flex-col gap-4">
                 <Header>2026: A Pivot</Header>
-                <Paragraph>Restoring furniture. Small goods.</Paragraph>
+                <Paragraph>
+                    The job was everything I wished it wasn't. Somewhat
+                    inconceivably I was appreciated even less than I was payed.
+                    Finally, enough was enough, and I moved on.
+                </Paragraph>
+                <Paragraph>
+                    Building things for myself wasn't going to earn a living. I
+                    began restoring old furniture, as well as designing and
+                    producing original builds to sell.
+                </Paragraph>
             </div>
         </div>
     )

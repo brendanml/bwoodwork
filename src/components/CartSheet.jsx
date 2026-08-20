@@ -9,6 +9,7 @@ import {
     SheetTrigger,
     SheetFooter,
 } from "@/components/ui/sheet"
+import ShoppingCartImage from "@/assets/cart.svg"
 
 export function CartSheet() {
     const { isCartOpen, openCart, closeCart, cart, changeCartQuantity } =
@@ -30,7 +31,7 @@ export function CartSheet() {
         >
             <SheetTrigger asChild>
                 <button className="relative p-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-                    <ShoppingCart className="h-5 w-5" />
+                    <img src={ShoppingCartImage} className="w-6" />
                     {totalItems > 0 && (
                         <span className="absolute top-0 right-0 bg-primary text-primary-foreground text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center animate-in zoom-in-50">
                             {totalItems}
