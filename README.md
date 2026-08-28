@@ -21,4 +21,3 @@ Tailwind is an easy choice for me. When incorporating layouts and variables, it 
 ### shadcn
 
 I use shadcn for almost every project. I appreciate owning the component code, and the default just look visually appealing.
-I
