@@ -3,8 +3,7 @@ import { Link } from "react-router"
 export default function ProjectCardContents({ project }) {
     const thumbnailUrl = project.image_urls?.[0]
 
-    const rawDate = project.date || project.createdAt
-    const year = rawDate ? new Date(rawDate).getFullYear() : ""
+    const year = new Date(project.date).getFullYear()
 
     return (
         <div className="text-left space-y-3">

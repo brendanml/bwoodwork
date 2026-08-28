@@ -47,7 +47,7 @@ export function CartSheet() {
                 <div className="flex flex-col flex-1 min-h-0">
                     <SheetHeader className="pb-4 border-b border-border">
                         <SheetTitle className="font-heading tracking-tight text-lg">
-                            Your Cart
+                            Cart
                         </SheetTitle>
                     </SheetHeader>
 
@@ -55,10 +55,10 @@ export function CartSheet() {
                         {cart.length === 0 ? (
                             <div className="h-full flex flex-col items-center justify-center text-center space-y-2 py-12">
                                 <p className="text-sm font-medium text-muted-foreground">
-                                    Your cart is empty
+                                    Empty :(
                                 </p>
                                 <p className="text-xs text-muted-foreground/70">
-                                    Add items from the store to get started.
+                                    Add items to get started.
                                 </p>
                             </div>
                         ) : (

@@ -13,11 +13,11 @@ export default function Navigation() {
                         projects
                     </NavLink>
                 </li>
-                {/* <li>
+                <li>
                     <NavLink to="/videos" className={linkStyle}>
                         videos
                     </NavLink>
-                </li> */}
+                </li>
                 <li>
                     <NavLink to="/store" className={linkStyle}>
                         store

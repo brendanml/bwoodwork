@@ -21,6 +21,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { DatePicker } from "@/components/DatePicker"
 import {
     Field,
     FieldDescription,
@@ -55,24 +56,20 @@ export default function ProjectForm() {
     const { id } = useParams()
     const navigate = useNavigate()
 
-    // Form Loading & Submitting state
     const [isSubmitting, setIsSubmitting] = useState(false)
 
-    // Project state
     const [projectId, setProjectId] = useState("")
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
+    const [projectDate, setProjectDate] = useState(new Date())
     const [youtubeUrl, setYoutubeUrl] = useState("")
     const [projectImages, setProjectImages] = useState([])
 
-    // Modular Writeup state
     const [writeup, setWriteup] = useState([])
 
-    // Dynamic Wood Options state (GET /api/woods)
     const [woodOptions, setWoodOptions] = useState([])
     const [isLoadingWoods, setIsLoadingWoods] = useState(true)
 
-    // Products state & tracking deleted product IDs
     const [products, setProducts] = useState([])
     const [deletedProductIds, setDeletedProductIds] = useState([])
 
@@ -132,6 +129,7 @@ export default function ProjectForm() {
                     setName(projectData.name || "")
                     setDescription(projectData.description || "")
                     setYoutubeUrl(projectData.youtube_url || "")
+                    setProjectDate(new Date(projectData.date))
                     setProjectImages(projectData.image_urls || [])
                     setWriteup(projectData.writeup || [])
                 }
@@ -318,7 +316,6 @@ export default function ProjectForm() {
         )
     }
 
-    // --- Form Submit Handler ---
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
@@ -329,6 +326,7 @@ export default function ProjectForm() {
             _id: activeProjectId,
             name,
             description,
+            date: projectDate ? projectDate.toISOString() : null,
             youtube_url: youtubeUrl || null,
             image_urls: projectImages,
             writeup: writeup.map((sec) => ({
@@ -432,6 +430,14 @@ export default function ProjectForm() {
                         placeholder="Brief overview or meta summary..."
                         required
                     />
+                </Field>
+
+                <Field>
+                    <FieldLabel>Project Date</FieldLabel>
+                    <DatePicker date={projectDate} setDate={setProjectDate} />
+                    <FieldDescription>
+                        Completion or publication date.
+                    </FieldDescription>
                 </Field>
 
                 <Field>
@@ -702,7 +708,6 @@ export default function ProjectForm() {
                                     </Field>
                                 </div>
 
-                                {/* Preview image thumbnail if present */}
                                 {sec.image && (
                                     <div className="flex items-center gap-3 p-2 border rounded bg-background">
                                         <img

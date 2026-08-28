@@ -26,10 +26,14 @@ export default function ProjectPage() {
         return <Loading />
     }
 
+    const sortedProjects = [...projects].sort(
+        (a, b) => new Date(b.date) - new Date(a.date),
+    )
+
     return (
         <div className="mt-4">
             <CardGrid>
-                {projects.map((p) => (
+                {sortedProjects.map((p) => (
                     <Card key={p._id}>
                         <ProjectCardContents project={p} />
                     </Card>
