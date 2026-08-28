@@ -2,7 +2,13 @@
 
 A react frontend for my woodworking portfolio.
 
+LIVE: https://wwww.bwoodwork.com
+
 ## Technologies
+
+### React
+
+React is the choice. In a modern web landscape of reactivity, motion, and gradients I've come to appreciate the sites that use it deliberately. A website is a vehicle for it's content, and the content should be the star. A ton of inspiration came from the A24 website, the minimal look and feel. All that being said, React is where 90% of my web development has happened, and there are real benefits to component re-usability and reactive state when it comes to the user experience.
 
 ### React Router 7 Library
 
