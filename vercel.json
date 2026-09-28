@@ -5,8 +5,18 @@
             "destination": "https://bwoodwork-server.vercel.app/:path*"
         },
         {
-            "source": "/(.*)",
+            "source": "/((?!api|_vercel|.*\\..*).*)",
             "destination": "/index.html"
         }
-    ]
+    ],
+    "images": {
+        "sizes": [300, 400, 600, 800, 900, 1200],
+        "remotePatterns": [
+            {
+                "protocol": "https",
+                "hostname": "*.public.blob.vercel-storage.com"
+            }
+        ],
+        "formats": ["image/avif", "image/webp"]
+    }
 }
