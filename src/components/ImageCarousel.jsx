@@ -4,7 +4,7 @@ import {
     CarouselContent,
     CarouselItem,
 } from "@/components/ui/carousel"
-import { getOptimizedUrl } from "~/utils/image" // Adjust path to where your helper is located
+import { getOptimizedUrl } from "@/lib/utils"
 
 export default function ImageCarousel({ imageUrls = [] }) {
     const [api, setApi] = useState(null)
