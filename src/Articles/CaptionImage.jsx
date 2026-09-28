@@ -1,7 +1,7 @@
 export default function CaptionImage({
     src,
     caption,
-    className = "max-h-100",
+    className = "max-h-130",
 }) {
     return (
         <figure className={`space-y-2`}>
