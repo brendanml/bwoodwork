@@ -23,7 +23,11 @@ export default function ProjectPage() {
     }, [])
 
     if (isLoading) {
-        return <Loading />
+        return (
+            <div className="mt-20">
+                <Loading />
+            </div>
+        )
     }
 
     const sortedProjects = [...projects].sort(
