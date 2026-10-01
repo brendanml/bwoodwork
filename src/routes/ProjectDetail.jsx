@@ -93,57 +93,62 @@ export default function ProjectDetail() {
                     ))}
                 </section>
             )}
-
-            <div className="w-full bg-black/90 backdrop-blur-lg border-t border-neutral-800 fixed bottom-0 left-0 z-50 px-4 py-3 pb-safe sm:hidden">
-                <div className="w-full flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
-                    <div className="flex items-center gap-2 w-full">
-                        {project.youtube_url && (
-                            <Button
-                                variant="outline"
-                                size="sm"
-                                asChild
-                                className="flex-1 h-11 bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 hover:text-white text-xs font-medium"
-                            >
-                                <a
-                                    href={project.youtube_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+            {(project.youtube_url || digitalProduct || physicalProduct) && (
+                <div className="w-full bg-black/90 backdrop-blur-lg border-t border-neutral-800 fixed bottom-0 left-0 z-50 px-4 py-3 pb-safe sm:hidden">
+                    <div className="w-full flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
+                        <div className="flex items-center gap-2 w-full">
+                            {project.youtube_url && (
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    asChild
+                                    className="flex-1 h-11 bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 hover:text-white text-xs font-medium"
                                 >
-                                    Video
-                                    <ExternalLink className="ml-1 h-3.5 w-3.5 text-neutral-400" />
-                                </a>
-                            </Button>
-                        )}
+                                    <a
+                                        href={project.youtube_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Video
+                                        <ExternalLink className="ml-1 h-3.5 w-3.5 text-neutral-400" />
+                                    </a>
+                                </Button>
+                            )}
 
-                        {digitalProduct && (
-                            <Button
-                                variant="outline"
-                                size="sm"
-                                className="flex-1 h-11 bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 hover:text-white text-xs font-medium"
-                                asChild
-                            >
-                                <Link to={`/products/${digitalProduct._id}`}>
-                                    <NotepadText className="mr-1 h-3.5 w-3.5 text-neutral-400" />
-                                    Plans
-                                </Link>
-                            </Button>
-                        )}
+                            {digitalProduct && (
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="flex-1 h-11 bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 hover:text-white text-xs font-medium"
+                                    asChild
+                                >
+                                    <Link
+                                        to={`/products/${digitalProduct._id}`}
+                                    >
+                                        <NotepadText className="mr-1 h-3.5 w-3.5 text-neutral-400" />
+                                        Plans
+                                    </Link>
+                                </Button>
+                            )}
 
-                        {physicalProduct && (
-                            <Button
-                                size="sm"
-                                className="flex-1 h-11 bg-white text-black hover:bg-neutral-200 text-xs font-semibold shadow-sm"
-                                asChild
-                            >
-                                <Link to={`/products/${physicalProduct?._id}`}>
-                                    <ShoppingCart className="mr-1 h-3.5 w-3.5" />
-                                    Buy
-                                </Link>
-                            </Button>
-                        )}
+                            {physicalProduct && (
+                                <Button
+                                    size="sm"
+                                    className="flex-1 h-11 bg-white text-black hover:bg-neutral-200 text-xs font-semibold shadow-sm"
+                                    asChild
+                                >
+                                    <Link
+                                        to={`/products/${physicalProduct?._id}`}
+                                    >
+                                        <ShoppingCart className="mr-1 h-3.5 w-3.5" />
+                                        Buy
+                                    </Link>
+                                </Button>
+                            )}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
 
             <div className="fixed bottom-5 right-10 w-22 h-40 sm:flex flex-col justify-center gap-2 hidden">
                 {project.youtube_url && (

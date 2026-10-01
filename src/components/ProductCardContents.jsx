@@ -1,9 +1,12 @@
+import { getOptimizedUrl } from "@/lib/utils"
 import { Link } from "react-router"
 
 export default function ProductCardContents({ product }) {
     // Extract thumbnail URL
     const thumbnailUrl = product.image_url
-
+    const thumbnailUrlOptimized = thumbnailUrl
+        ? getOptimizedUrl(thumbnailUrl, 600)
+        : null
     // Find lowest price from options (in cents)
     const options = product.options || []
     const prices = options.map((opt) => opt.price_usd).filter((p) => p != null)
@@ -13,9 +16,9 @@ export default function ProductCardContents({ product }) {
     return (
         <div className="text-left space-y-3">
             <Link to={`/products/${product._id}`} className="block space-y-2">
-                {thumbnailUrl ? (
+                {thumbnailUrlOptimized ? (
                     <img
-                        src={thumbnailUrl}
+                        src={thumbnailUrlOptimized}
                         alt={product.name || "Product thumbnail"}
                         className="w-full aspect-square object-cover rounded-xs border bg-muted/20"
                     />

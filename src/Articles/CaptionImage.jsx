@@ -1,12 +1,15 @@
+import { getOptimizedUrl } from "@/lib/utils"
+
 export default function CaptionImage({
     src,
     caption,
     className = "max-h-130",
 }) {
+    const smallImageUrl = src ? getOptimizedUrl(src, 600) : null
     return (
         <figure className={`space-y-2`}>
             <img
-                src={src}
+                src={smallImageUrl}
                 alt={caption || "No alt provided."}
                 className={`w-full shadow-sm object-cover h-full ${className}`}
             />
