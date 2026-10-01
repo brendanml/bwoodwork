@@ -4,7 +4,6 @@ export function YoutubeThumbnail({ youtubeURL }) {
     const regex = /(?:v=)([0-9A-Za-z_-]{11})/
     const match = youtubeURL.match(regex)
 
-    console.log(match)
     const youtubeId = match ? match[1] : null
 
     if (!youtubeId) return null

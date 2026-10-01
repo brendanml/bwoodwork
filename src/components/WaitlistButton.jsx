@@ -34,7 +34,6 @@ export default function WaitlistButton({ productId }) {
             setIsError(true)
         }
     }
-    console.log(productId)
     return (
         <div className="text-lg relative shadow-sm">
             <span className="text-xs text-muted-foreground absolute -top-4">
